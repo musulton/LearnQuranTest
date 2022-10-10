@@ -10,7 +10,7 @@ export default function App() {
   const fetchData = async () => {
     try {
       setLoadingMore(true)
-      let response = await fetch(
+      const response = await fetch(
         'https://dev-dummy-api.jelantah.org/api/foods/get'
       );
       const json = await response.json();
@@ -35,7 +35,6 @@ export default function App() {
     if (loadingMore) return
 
     fetchData();
-    await delay(1000)
   }
   
   return (
